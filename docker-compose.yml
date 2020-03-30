@@ -29,7 +29,11 @@ services:
 
   migration:
      image: node_webapp_api:latest
-     command: ["./wait-for-it/wait-for-it.sh", "postgres:5432", "--", "npm", "run", "migrate"]
+     command: >
+       sh -c '
+       ./wait-for-it/wait-for-it.sh postgres:5432
+       -- npm run migrate
+       '
      depends_on:
      - postgres
 volumes:
