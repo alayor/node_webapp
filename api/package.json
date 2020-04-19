@@ -4,13 +4,21 @@
   "description": "node_webapp_api",
   "main": "src/index.js",
   "scripts": {
-    "start": "cross-env NODE_PATH=. node src/index.js",
-    "start:dev": "cross-env NODE_PATH=. nodemon src/index.js"
+    "start": "babel-watch --inspect=0.0.0.0:8229 -L ./src/index.js"
   },
   "dependencies": {
-    "koa": "^2.7.0",
-    "koa-router": "^7.4.0",
-    "cross-env": "^5.2.0",
-    "nodemon": "2.0.2"
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-react": "^7.7.4",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "koa": "^2.8.2",
+    "koa-async-validator": "^0.4.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "babel-watch": "^7.0.0"
   }
 }
